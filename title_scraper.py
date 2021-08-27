@@ -35,7 +35,7 @@ class Tracklist:
     def findTags(self, html):
         """
          Expects a bs4 object to be passed as html.
-         Parses through to return the tags of the Soundcloud track in the given bs4 object.
+         Parses through to return the tags of the Soundcloud hashtags in the given bs4 object.
          Still a WOP -- can I get these without js...
         """
         tags = html.findAll('a', attrs={'class':"sc-tag sc-tag-medium"})
