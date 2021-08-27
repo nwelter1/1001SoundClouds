@@ -24,7 +24,7 @@ class Tracklist:
     def findTitle(self, html):
         """
          Expects a bs4 object to be passed as html.
-         parses through to return the title of the coundcloud track in the given html
+         parses through to return the title of the Soundcloud track in the given bs4 object.
         """
         try:
             title = html.find('a', attrs= {'itemprop':"url"})
@@ -33,6 +33,11 @@ class Tracklist:
             return None
     
     def findTags(self, html):
+        """
+         Expects a bs4 object to be passed as html.
+         Parses through to return the tags of the Soundcloud track in the given bs4 object.
+         Still a WOP -- can I get these without js...
+        """
         tags = html.findAll('a', attrs={'class':"sc-tag sc-tag-medium"})
         return tags
 
